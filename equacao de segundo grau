@@ -8,7 +8,7 @@ int main() {
   cin>>a>>b>>c;
   d=b*b-(4*a*c);
   if(d<0){
-    cout<<"não existem raízes reias para essa equação"<<endl;
+    cout<<"não existem raízes reais para essa equação"<<endl;
   }
   else{
         x1=(sqrt(d)-b)/(2*a);
