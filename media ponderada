@@ -1,0 +1,21 @@
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+int main() {
+  double a=0,b,c,m,p,t=0;
+  int n;
+  cout<<"quantas provas voce quer calcular a media?"<<endl;
+  cin>>n;
+  cout<<"insira suas notas seguidas de seus respectivos pesos"<<endl;
+  while(a<n){
+    cin>>b;
+    cin>>p;
+    c=c+b*p;
+    t=t+p;
+    a=a+1;
+  }
+  m=c/t;
+  cout<<"sua média é "<<m<<endl;
+}
+
