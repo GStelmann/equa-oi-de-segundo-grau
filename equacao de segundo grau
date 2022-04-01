@@ -1,0 +1,18 @@
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+int main() {
+  double a,b,c,x1,x2,d;
+  cout<<"insira os valores de A, B e C"<<endl;
+  cin>>a>>b>>c;
+  d=b*b-(4*a*c);
+  if(d<0){
+    cout<<"não existem raízes reias para essa equação"<<endl;
+  }
+  else{
+        x1=(sqrt(d)-b)/(2*a);
+  x2=(-b-sqrt(d))/(2*a);
+  cout<<"as raizes dessa equação são "<<x1<<" e "<<x2<<endl;
+        }
+}
