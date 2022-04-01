@@ -1,0 +1,18 @@
+include<iostream>
+include<cmath>
+usingnamespace std;
+
+    int main(){
+    int patas,animais,patos,coelhos,x;
+    cout<<"quantas patas existem no rancho?"
+    cin>>patas;
+    cout<<"quantos animais existem no rncho?"
+    cin>>animais;
+    x=animais*2;
+    coelhos=(patas-x)/2;
+    patos=animais-coelhos;
+    cout<<"existem "<<patos<<" patos e "<<coelhos<<" coelhos"<<endl;
+
+
+}
+
