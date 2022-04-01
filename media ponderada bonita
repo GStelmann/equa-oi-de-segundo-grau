@@ -1,0 +1,24 @@
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+int main() {
+  double a=0,notadaprova,notatotal,mediafinal,peso,t=0;
+  int numerodenotas;
+  cout<<"quantas provas voce quer calcular a media?"<<endl;
+  cin>>numerodenotas;
+  if(numerodenotas<1){
+    cout<<"como vc conseguiu ter um numero de notas menor que 1????"<<endl;
+  }
+  cout<<"insira suas notas seguidas de seus respectivos pesos"<<endl;
+  while(a<numerodenotas){
+    cin>>notadaprova;
+    cin>>peso;
+    notatotal=notatotal+notadaprova*peso;
+    t=t+peso;
+    a=a+1;
+  }
+  mediafinal=notatotal/t;
+  cout<<"sua média é "<<mediafinal<<endl;
+}
+
