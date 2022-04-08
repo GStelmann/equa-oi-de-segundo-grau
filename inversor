@@ -5,20 +5,50 @@ using namespace std;
 
 int main()
 {
-    int d=1,n,k=0,g,nf,ga,p,f;
+    int d=1,n,NdeAlgarismos=0,resto,nf=0,ga,p,lugar=0,negativador=0,m;
     cin>>n;
+    if(n==0){
+        cout<<"insira um numero válido"<<endl;
+        return 0;
+    }
+    if(n<0){
+        n=n*(-1);
+        negativador=1;
+    }
     while(d<=n){
-        k=k+1;
+        NdeAlgarismos=NdeAlgarismos+1;
         d=d*10;
     }
-    p=k;
+    p=NdeAlgarismos;
+    m=n;
     while(p>0){
-    g=n%10^(p-1);
-    ga=(n-g)/(10^(p-1));
-    f=k-p+1;
-    nf=nf+ga*(10^f);
+    if(p>1 && p<NdeAlgarismos){
+            resto=m%(10^(p-1));
+    ga=(m-resto)/(10^(p-1));
+    lugar=NdeAlgarismos-p;
+    nf=nf+(ga*(10^lugar));
     p=p-1;
-    n=g;
+    m=resto;
     }
-    cout<<nf;
+    if(p==NdeAlgarismos && NdeAlgarismos!=1){
+        resto=m%(10^(p-1));
+        ga=(m-resto)/(10^(p-1));
+        nf=ga;
+        p=p-1;
+        m=resto;
+    }
+    if(p==1){
+        if(NdeAlgarismos==1){
+                nf=m;
+                p=p-1;
+        }
+        if(NdeAlgarismos>1){
+                nf=nf+(m*(10^(NdeAlgarismos-1)));
+        p=p-1;
+    }}
+    }
+    if(negativador==1){
+        nf=nf*(-1);
+    }
+    cout<<nf<<endl;
     }
