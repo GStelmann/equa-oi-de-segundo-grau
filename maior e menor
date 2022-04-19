@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+float menor, maior, numero,k=0;
+cout<<"digite as notas, quando terminar digite um numero negativo"<<endl;
+do{
+    cin>>numero;
+    if(k==0&& numero>=0){
+        menor=numero;
+        maior=numero;
+        k=1;
+    }
+    if(numero>maior && numero>0){
+        maior=numero;
+    }
+    if(numero<menor && numero>=0){
+        menor=numero;
+    }
+}while(numero>=0);
+cout<<"o menor numero e "<<menor<<" e o maior numero e "<<maior;
+return 0;
+
+
+
+}
