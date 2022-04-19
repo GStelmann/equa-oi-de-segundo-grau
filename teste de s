@@ -1,0 +1,13 @@
+#include <iostream>
+
+using namespace std;// Guilherme França Stelmann 13678571
+
+int main(){
+char s;//char que vai ser usada como variavel
+cout<<"digite uma letra"<<endl;
+while(s!='s'){//teste se a letra é s
+    cin>>s;
+}
+cout<<"parabens!!!"<<endl;
+return 0;
+}
