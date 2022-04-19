@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()// Guilherme França Stelmann 13678571
+{
+   float l1,l2,l3;//variaveis para representarem os valores dos lados dos triangulos
+   cin>>l1>>l2>>l3;
+   if(l1>=(l2+l3) || l2>=(l3+l1) || l3>=(l1+l2)){// testando se o triangulo existe
+        cout<<" Esse triangulo nao existe"<<endl;
+   return 0;}
+   else{// caso ele exista
+   if(l1==l2 && l2==l3){//teste se ele é equilatero
+                  cout<<"equilátero"<<endl;
+                  return 0;}
+   else if(l1!=l2 && l1!=l3 && l2!=l3){//teste se ele é escaleno
+    cout<<"escaleno"<<endl;
+    return 0;
+   }
+   else{//se ele existe e não e escaleno ou equilatero, ele é isosceles
+        cout<<"isósceles"<<endl;
+   return 0;
+   }
+}}
