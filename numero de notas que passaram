@@ -2,13 +2,17 @@
 
 using namespace std;
 
-int main()
+int main()//Guilherme Stelmann 13678571
 {
     int np=0, nr=0;
-    float n=0;// variavel np numero de alunos que passaram, nr numero de alunos reprovados e n nota.
+    float n=0, p, sn;// variavel np numero de alunos que passaram, nr numero de alunos reprovados e n nota.
     while(n>=0){//loop para que infinitas notas sejam adicionadas até uma delas ser negativa
         cout<<"digite a nota do aluno, quando acabar, digite um numro negativo"<<endl;
         cin>>n;
+        if(n>0){
+            sn=sn+n;
+        }
+
         if(n>=5){//se for maior ou igual a 5, ele passou, então adicionara 1 a np
            np=np+1;
         }
@@ -16,6 +20,8 @@ int main()
             nr=nr+1;
         }
     }
-cout<<"o numero de alunos que passaram foi "<<np<<" e o numero de alunos que nao passaram foi "<<nr<<endl;
+    p=(100*np)/(np+nr);//calculo da porcentagem
+cout<<"o numero de alunos que passaram foi "<<np<<" e o numero de alunos que nao passaram foi "<<nr<<" e a porcentagem dos alunos que passaram foi "<<p<<"%"<<" e a media da sala foi "<<sn/(np+nr)<<endl;
 
 }
+
