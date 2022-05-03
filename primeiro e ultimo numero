@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+int numero,k=0,i=1,pnumero,unumero,soma;
+cin>>numero;
+while(numero>=i){
+    k=k+1;
+    i=i*10;
+    cout<<i<<" "<<k<<endl;
+}
+int x,y,k=0;
+long resultado=1;
+cin>>x>>y;
+while(k<y){
+resultado = resultado*x;
+k=k+1;
+}
+
+
+unumero=(numero%10);
+
+pnumero=(numero-(numero%(10^(k-1))))/(10^(k-1));
+soma=unumero+pnumero;
+cout<<(numero-(numero%(10^(k-1))))<<endl;
+cout<<(10^(2))<<endl;
+cout<<unumero<<" "<<pnumero<<endl;
+cout<<"a soma dos numeros e "<<soma<<endl;
+}
