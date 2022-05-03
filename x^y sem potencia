@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main(){
+int x,y,k=0;
+long resultado=1;
+cin>>x>>y;
+while(k<y){
+resultado = resultado*x;
+k=k+1;
+}
+cout<<resultado;
+}
