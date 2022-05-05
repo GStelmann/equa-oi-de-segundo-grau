@@ -1,30 +1,24 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
-int main(){
-int numero,k=0,i=1,pnumero,unumero,soma;
+int main(){//guilherme frança stelmann 13678571
+int numero,k=0,i=1,q=0,pnumero,unumero;//unumero signufica ultimo numero, pnumero significa primeiro numero, já k, i e q são variaveis para judar nos calculos e loops
+  cout<<"Digite um numero e veja a soma entre seu ultimo e primeiro algarismo"<<endl;
 cin>>numero;
 while(numero>=i){
     k=k+1;
     i=i*10;
-    cout<<i<<" "<<k<<endl;
 }
-int x,y,k=0;
-long resultado=1;
-cin>>x>>y;
-while(k<y){
-resultado = resultado*x;
-k=k+1;
+
+long potencia =1;//estava com problemas para colocar potencias diretamente, então usei essa forma mais bruta de se conseguir potencias.
+while(q<k-1){//loop para fazer (10^k-1)
+potencia = potencia*10;
+q=q+1;
 }
 
 
-unumero=(numero%10);
+unumero=(numero%10);//ultimo algarismo é o resto da divisão por 10
 
-pnumero=(numero-(numero%(10^(k-1))))/(10^(k-1));
-soma=unumero+pnumero;
-cout<<(numero-(numero%(10^(k-1))))<<endl;
-cout<<(10^(2))<<endl;
-cout<<unumero<<" "<<pnumero<<endl;
-cout<<"a soma dos numeros e "<<soma<<endl;
+pnumero=(numero-(numero%(potencia)))/potencia;//primeiro algarismo é o resto  por 10^(k-1) que subtrai o numero para que sobre um numero correto e depois dividido pelo 10^(k-1) de novo para sobrar apenas o algarismo.
+cout<<"a soma dos numeros e "<<pnumero+unumero<<endl;
 }
