@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int grupoletras,caracter,n=0,p=0;
+    cout<<"insira a quantidade de grupos de letras existem"<<endl;
+    cin>>grupoletras;
+    int caractergrupo[grupoletras],k=0,q=grupoletras-1;
+    cout<<"Quenatos caracteres existem no total, sem contar o numero de espaços"<<endl;
+    cin>>caracter;
+    cout<<"insira a quantidade de letras em cada grupo em ordem"<<endl;
+    while(k<grupoletras){
+    cin>>caractergrupo[k];
+    k=k+1;
+}
+    char nome[caracter];
+    int z=caracter;
+    cout<<"insira a frase que será invertida"<<endl;
+    while(n<caracter){
+        cin>>nome[n];
+        n=n+1;
+    }
+    while(z>0){
+        cout<<nome[z-1];
+        z=z-1;
+        if(caracter-z+p==caractergrupo[q]){
+            cout<<" ";
+            p=p+caractergrupo[q];
+            q=q-1;
+
+        }
+    }
+}
