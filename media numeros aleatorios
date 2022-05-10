@@ -1,0 +1,23 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+
+int main()
+{
+ int Tam,k=0;
+ float soma=0;
+ srand(time(NULL));
+ cout<<"qual o tamanho do vetor?"<<endl;
+ cin>>Tam;
+ int vet[Tam];
+ while(k<Tam){
+    vet[k]= rand()%4000;
+    k=k+1;
+ }
+ while(Tam>=1){
+    soma=vet[Tam-1]+soma;
+    cout<<vet[Tam-1]<<" ";
+    Tam=Tam-1;
+ }
+ cout<<endl<<"a média e "<<soma/(k)<<endl;
+}
