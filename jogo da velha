@@ -3,8 +3,18 @@
 using namespace std;
 
 int main(){//Guilherme França Stelmann 13678571
-    int i=2,c1,c2,v=0,pl=0,pc=0,j=0,ct=0,cl=0,validade;
-    char ji,tabuleiro [3][3];//essa matriz reprezenta o tabuleiro
+    int i=2,c1,c2,v=0,pl=0,pc=0,j=0,ct=0,cl=0,validade;//i é para definir quem começa, cl e c2 são as coordenadas das jogadas, pl e pc são para povoar a matriz,j é o numero de jogadas, validade valida a jogada e cl e ct testam condições de vitória
+    char r='k',ji,tabuleiro [3][3];//essa matriz reprezenta o tabuleiro,r é para ver as regras e ji para definir quem começa
+    cout<<"se quiser ver as recras do jogo da velha, insira r, caso contrário, onsora outro caracter"<<endl;
+    cin>>r;
+    if(r=='r'||'R'){//é bom ter uma explicação de regras para iniciantes
+        cout<<"cada vez, cada jogador coloca a sua marca onde pretender (um joga com o, outro jogador com x)"<<endl;
+        cout<<"O objetivo do jogo e fazer uma sequencia de 3 símbolos iguais, seja em linha vertical, horizontal ou diagonal, enquanto tenta impedir que seu adversario faca o mesmo"<<endl;
+        cout<<"Quando um dos participantes faz uma linha, ganha o jogo"<<endl;
+        cout<<"caso nenhum jogador venca em 9 jogadas, vai dar velha"<<endl;
+        cout<<"para jogar, insira quem vai começar por x ou o e depois insira as coordenadas das casas em que voce vai jogar"<<endl;
+        cout<<"divirta-se!!!!"<<endl;
+    }
     while(pc<3){//povoando o tabuleiro, pois caso não tenha nada nas casas, é possivel que bugs aconteçam
         tabuleiro[pl][pc]='_';
         if(pl!=2){
@@ -15,7 +25,7 @@ int main(){//Guilherme França Stelmann 13678571
             }
     }
     while(i==2){//certificando se a jogada inicial é x ou o, após isso, os lances serão automáticos
-      cout<<"insira quem vai começar, x ou o"<<endl;
+      cout<<"insira quem vai iniciar, x ou o"<<endl;
       cin>>ji;
       if(ji=='X'||ji=='x'){
         i=0;
@@ -33,7 +43,13 @@ int main(){//Guilherme França Stelmann 13678571
     cout<<"  l2  "<<tabuleiro [1][0]<<" | "<<tabuleiro [1][1]<<" | "<<tabuleiro[1][2]<<endl;
     cout<<"     -----------"<<endl;
     cout<<"  l3  "<<tabuleiro [2][0]<<" | "<<tabuleiro [2][1]<<" | "<<tabuleiro[2][2]<<endl;
-    cout<<endl<<"Insira a linha e depois a coluna"<<endl;
+    if((i+j)%2==0){
+        cout<<endl<<"jogada do jogador x"<<endl;
+    }
+    else{
+        cout<<endl<<"jogada do jogador o"<<endl;
+    }
+    cout<<"Insira o numero da linha e depois o numero da coluna"<<endl;
     while(v==0 && j<9){//esse while é onde o loop acontece, é limitado pelo numero de jogadas e é interrompido em caso de vitória
         cin>>c1>>c2;
         validade=1;//validade impede que jogadas ocorram "em cima" de outras jogadas
@@ -41,7 +57,7 @@ int main(){//Guilherme França Stelmann 13678571
             validade=0;
             cout<<"jogada não válida, jogue novamente"<<endl;
         }
-        if((i+j)%2==0 && validade==1){//cerificando se a jogada inicial é 
+        if((i+j)%2==0 && validade==1){//cerificando se a jogada inicial é valida
             tabuleiro[c1-1][c2-1]='x';
             j=j+1;
             }
@@ -87,9 +103,16 @@ int main(){//Guilherme França Stelmann 13678571
         cout<<"  l2  "<<tabuleiro [1][0]<<" | "<<tabuleiro [1][1]<<" | "<<tabuleiro[1][2]<<endl;
         cout<<"     -----------"<<endl;
         cout<<"  l3  "<<tabuleiro [2][0]<<" | "<<tabuleiro [2][1]<<" | "<<tabuleiro[2][2]<<endl;
-        cout<<endl<<"Insira a linha e depois a coluna"<<endl;
-}
-
+        if(v==0){//caso algúem tenha vencido, não faz sentido falar quem joga na próxima rodada
+            if((i+j)%2==0){//avisando que joga ara evitar confusões
+                cout<<endl<<"jogada do jogador x"<<endl;
+            }
+            else{
+                cout<<endl<<"jogada do jogador o"<<endl;
+            }
+            cout<<"Insira a linha e depois a coluna"<<endl;
+        }
+    }
     if(v==1){//se v=1, x venceu
         cout<<"parabéns jogador com x, voce venceu!!!!!!!"<<endl;
         return 0;
@@ -103,3 +126,4 @@ int main(){//Guilherme França Stelmann 13678571
         return 0;
     }
 }
+
