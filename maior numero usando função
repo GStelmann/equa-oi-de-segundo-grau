@@ -1,0 +1,31 @@
+#include <iostream>
+#include <time.h>
+using namespace std;
+#define a 517994
+float maior(float vet[a]){
+    int i=0;
+    float maior;
+    while(i<a){
+        if(i==0){
+        maior=vet[i];
+        }
+        if(vet[i]>maior){
+            maior=vet[i];
+        }
+        i=i+1;
+    }
+    return maior;
+}
+int main(){//Guilherme França Stelmann 13678571
+int k=0;
+float vetor[a],maximo;
+srand(time(NULL));
+while(k<a){
+    vetor[k]=rand()%32767;
+    cout<<vetor[k]<<" ";
+    k++;
+}
+maximo=maior(vetor);
+cout<<endl<<maximo<<endl;
+}
+
