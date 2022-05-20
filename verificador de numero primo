@@ -1,16 +1,19 @@
 #include <iostream>
 
 using namespace std;
+
 int prima(int a){
-int k=1,q=0, vet[a];
-while(a>=k){
-    if(a%k==0){
-        vet[q]=a;
-        q++;
+    int k=1,q=0, vet[a];
+    while(a>=k){
+        if(a%k==0){
+            vet[q]=a;
+            q++;
+            cout<<k<<"  ";
+        }
+        k++;
     }
-    k++;
-}
-return q;
+    cout<<endl;
+    return q;
 }
 int main()
 {
@@ -19,9 +22,15 @@ int main()
    p=prima(n);
    if(p==2){
     cout<<"o numero e primo"<<endl;
+    return 0;
+   }
+   else if(p%2==1){
+    cout<<"o numero nao e primo, mas e quadrado perfeito"<<endl;
+    return 0;
    }
    else{
-    cout<<"o numero não é primo"<<endl;
+    cout<<"o numero nao e primo nem quadrado perfeito"<<endl;
+    return 0;
    }
 
 }
