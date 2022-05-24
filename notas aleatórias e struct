@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cstring>
+#include <time.h>
+using namespace std;
+
+
+struct coord{
+int id;
+double nota;
+}aluno[10];
+int main()
+{
+int k=0,q=0,c=0,i=0;
+double m;
+srand(time(NULL));
+while(k<10){
+    aluno[k].nota=rand()%100;
+    aluno[k].nota=aluno[k].nota/10;
+    aluno[k].id=k;
+    k++;
+}
+while(q<10){
+    cout<<"aluno "<<aluno[q].id<<" tem a nota "<<aluno[q].nota<<endl;
+    q++;
+}
+while (c<10){
+   if(c==0){
+    m=aluno[c].nota;
+    }
+    else if(aluno[c].nota>m){
+        m=aluno[c].nota;
+    }
+    c++;
+}
+cout<<"a maior nota e "<<m<<endl;
+while(i<10){
+    
+}
+
+
+
+
+
+
+
+
+}
