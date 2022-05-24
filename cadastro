@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+
+struct coord{
+char nome[30];
+char snome[30];
+int idade;
+}cliente[3];
+int main()
+{
+int a=0,k=0,i;
+char n[30],sn[30];
+while(a<3){
+cin>>n>>sn>>i;
+
+strcpy(cliente[a].nome,n);
+strcpy(cliente[a].snome,sn);
+cliente[a].idade=i;
+a++;
+}
+while(k<3){
+cout<<"o nome do cliente "<<k<<" e "<<cliente[k].nome<<", o sobrenome do cliente e "<<cliente[k].snome<<" e a idade do cliente e "<<cliente[k].idade<<endl;
+k++;
+}
+return 0;
+}
