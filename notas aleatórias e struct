@@ -3,27 +3,27 @@
 #include <time.h>
 using namespace std;
 
-
+#define TAM 10
 struct coord{
 int id;
 double nota;
-}aluno[10];
+}aluno[TAM];
 int main()
 {
-int k=0,q=0,c=0,i=0;
-double m;
+int k=0,q=0,c=0,i=0,g,p=0,qnota[100],u=0;
+double m,t,j;
 srand(time(NULL));
-while(k<10){
+while(k<TAM){
     aluno[k].nota=rand()%100;
     aluno[k].nota=aluno[k].nota/10;
     aluno[k].id=k;
     k++;
 }
-while(q<10){
+while(q<TAM){
     cout<<"aluno "<<aluno[q].id<<" tem a nota "<<aluno[q].nota<<endl;
     q++;
 }
-while (c<10){
+while (c<TAM){
    if(c==0){
     m=aluno[c].nota;
     }
@@ -32,16 +32,25 @@ while (c<10){
     }
     c++;
 }
-cout<<"a maior nota e "<<m<<endl;
-while(i<10){
-    
+cout<<endl<<"a maior nota e "<<m<<endl<<endl;
+while(p<=100){
+    qnota[p]=0;
+    p++;
 }
-
-
-
-
-
-
-
-
+while(i<TAM){
+        t=(aluno[i].nota)*10;
+        g=t;
+  qnota[g]=qnota[g]+1;
+  i++;
+}
+while(u<=(100))
+if(qnota[u]==0){
+    u++;
+}
+else{
+    j=u;
+    j=j/10;
+    cout<<"o numero de notas "<<j<<" e "<<qnota[u]<<endl;
+    u++;
+}
 }
