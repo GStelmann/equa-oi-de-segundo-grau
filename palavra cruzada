@@ -1,0 +1,73 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+void alocar(char matriz[50][50],struct j[50],int n){
+int k=0,p=1,u,c,l;
+while(k<n){
+    u=0;
+    c=0;
+    l=0;
+    while(j[k].palavra[l]!=' '){
+        l++;
+    }
+    while(u<l){
+        if(p==1){
+            matriz[0][u]=j[k].palavra[u];
+            u++;
+        }
+        if(p==2){
+            matriz[u][0]=j[k].palavra[u];
+            u++;
+        }
+    }
+    p++;
+    if(p==3){
+        p=1;
+    }
+}
+
+
+
+}
+struct coord{
+char palavra[50];
+char dica[1000];
+int numero;
+int posi;
+}jogada[50];
+
+void impressora(char mat[50][50]){
+    int i=0,j=0;
+    while(i<50){
+        cout<<mat[i][j]<<" ";
+        j++;
+        if(j==50){
+            j=0;
+            i++;
+            cout<<endl;
+        }
+    }
+}
+
+int main(){//Guilherme França Stelmann 13678571
+    int k=0,q=0,n,y=0;
+    char matriz[50][50];
+    while(k<50){
+        matriz[k][q]='_';
+        q++;
+        if(q==50){
+            q=0;
+            k++;
+        }
+    }
+    impressora(matriz);
+    cout<<"quantas palavras voce quer jogar?"<<endl;
+    cin>>n;
+    while(y<n){
+        cin>>jogada[y].palavra;
+        cin>>jogada[y].dica;
+        jogada[y].numero=y+1;
+        y++;
+    }
+}
