@@ -5,9 +5,9 @@ using namespace std;
 int main(){//Guilherme França Stelmann 13678571
     int i=2,c1,c2,v=0,pl=0,pc=0,j=0,ct=0,cl=0,validade;//i é para definir quem começa, cl e c2 são as coordenadas das jogadas, pl e pc são para povoar a matriz,j é o numero de jogadas, validade valida a jogada e cl e ct testam condições de vitória
     char r='k',ji,tabuleiro [3][3];//essa matriz reprezenta o tabuleiro,r é para ver as regras e ji para definir quem começa
-    cout<<"se quiser ver as recras do jogo da velha, insira r, caso contrário, onsora outro caracter"<<endl;
+    cout<<"se quiser ver as recras do jogo da velha, insira r, caso contrario, insora outro caracter"<<endl;
     cin>>r;
-    if(r=='r'||'R'){//é bom ter uma explicação de regras para iniciantes
+    if((r=='r')||(r=='R')){//é bom ter uma explicação de regras para iniciantes
         cout<<"cada vez, cada jogador coloca a sua marca onde pretender (um joga com o, outro jogador com x)"<<endl;
         cout<<"O objetivo do jogo e fazer uma sequencia de 3 símbolos iguais, seja em linha vertical, horizontal ou diagonal, enquanto tenta impedir que seu adversario faca o mesmo"<<endl;
         cout<<"Quando um dos participantes faz uma linha, ganha o jogo"<<endl;
@@ -55,7 +55,7 @@ int main(){//Guilherme França Stelmann 13678571
         validade=1;//validade impede que jogadas ocorram "em cima" de outras jogadas
         if(tabuleiro[c1-1][c2-1]!='_' ||( c1!=1 && c1!=2 && c1!=3) || (c2!=1 && c2!=2 && c2!=3)){
             validade=0;
-            cout<<"jogada não válida, jogue novamente"<<endl;
+            cout<<"jogada não valida, jogue novamente"<<endl;
         }
         if((i+j)%2==0 && validade==1){//cerificando se a jogada inicial é valida
             tabuleiro[c1-1][c2-1]='x';
@@ -114,11 +114,11 @@ int main(){//Guilherme França Stelmann 13678571
         }
     }
     if(v==1){//se v=1, x venceu
-        cout<<"parabéns jogador com x, voce venceu!!!!!!!"<<endl;
+        cout<<"parabens jogador com x, voce venceu!!!!!!!"<<endl;
         return 0;
     }
     else if(v==2){//nesse caso y venceu
-        cout<<"parabéns jogador com o, voce venceu!!!!!!!"<<endl;
+        cout<<"parabens jogador com o, voce venceu!!!!!!!"<<endl;
         return 0;
     }
     else if(j==9){//caso existam nove jogadas e não houve vencedor, deu velha,importante ressaltar que caso a jogada seja inválida ela não conta
