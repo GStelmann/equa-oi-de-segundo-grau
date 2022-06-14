@@ -1,8 +1,8 @@
-#include <iostream>
+#include <stdio.h>
 #include <cstring>
 using namespace std;
 
-void alocar(char matriz[50][50],struct j[50],int n){
+void alocar(char matriz[50][50], struct{char palavra[50]; char dica[1000]; int numero; int posi;}j[50],int n){
 int k=0,p=1,u,c,l;
 while(k<n){
     u=0;
@@ -27,27 +27,57 @@ while(k<n){
     }
 }
 
+int verificador(m[50][50],struct tentativa[50],struct k[50],int n,){//verifica se a jogada está correta
+  int v,x,y,tam;
+if(posi==1){
+  x=0;
+  y=1;
+}
+  else{
+    x=1;
+    y=0;
+  }
+v=1;
+  if(tam!=tamten){
+    v=0;
+  }else{
+  k=0;
+  while(k<tam){
+    if(k[n-1].palavra[k]!=tentativa[n-1].tentativa[k]){
+      v=0;
+      k++;
+    }
+  }
+    }
 
+
+
+  
+  return v;//se v é 1, o jogador acertou, se v=0, o jogador errou
+}
 
 }
+struct coord{
+char tentativa[50];
+int n;
+}tentativa[50]
 struct coord{
 char palavra[50];
 char dica[1000];
 int numero;
-int posi;
+int posi;//1 é vertical e 2 é horizontal
+int px;
+int py;
 }jogada[50];
 
 void impressora(char mat[50][50]){
     int i=0,j=0;
-    while(i<50){
-        cout<<mat[i][j]<<" ";
-        j++;
-        if(j==50){
-            j=0;
-            i++;
-            cout<<endl;
+    for(i=0; i<50; i++){ //imprime a matriz
+        for(j=0; j<50; j++){
+            printf("%2c", mat[i][j]);
         }
-    }
+            printf("\n");
+        }
 }
 
 int main(){//Guilherme França Stelmann 13678571
@@ -62,12 +92,15 @@ int main(){//Guilherme França Stelmann 13678571
         }
     }
     impressora(matriz);
-    cout<<"quantas palavras voce quer jogar?"<<endl;
-    cin>>n;
+    printf("quantas palavras voce quer jogar?");
+    scanf("%d", &n);
     while(y<n){
-        cin>>jogada[y].palavra;
-        cin>>jogada[y].dica;
+      printf("insira a palavra");
+        scanf("%c", &jogada[y].palavra);
+      printf("insira a dica");
+        scanf("%c", &jogada[y].dica);
         jogada[y].numero=y+1;
         y++;
     }
+  
 }
